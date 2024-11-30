@@ -80,11 +80,11 @@ public class MusicTrack implements Comparable<MusicTrack> {
      * SetTrackOrder sets the placement of the song in a playlist
      *
      * @param trackOrder    the placement of the song in a playlist
-     * @throws IllegalArgumentException     if trackOrder is less than or equal to zero
+     * @throws IllegalArgumentException     if trackOrder is less than 0
      * */
     public void setTrackOrder(int trackOrder){
-        if (trackOrder <= 0){
-            throw new IllegalArgumentException("trackOrder must be greater than 0, please provide a valid integer");
+        if (trackOrder < 0){
+            throw new IllegalArgumentException("trackOrder must not be negative, please provide a valid integer");
         }
         this.trackOrder = trackOrder;
     }
